@@ -1,0 +1,57 @@
+
+========================================
+<!-- #IDEAS / THINGS TO DO: -->
+how to inactivate click event for window in js
+===========================================
+
+<!-- # CSS ICON SOURCE -->
+https://fontawesome.com/
+https://fonts.google.com/icons
+https://heroicons.com/
+
+
+<!--# INSTALLATION: ref:https://youtu.be/7lmoLxbUENM -->
+with: postcss
+1. npm init
+2. npm install -D tailwindcss postcss autoprefixer vite
+3. npx tailwind init -p
+  (this will will generate tailwind.config.js file)
+4. put '*' in the tailwind.config.js file inside its 
+content property's value "content:[]" -
+      /** @type {import('tailwindcss').Config} */
+   module.exports = {
+     content: ['*'],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+    }
+
+5. create a base folder -name it 'css' and create a css file inside it.
+   then copy 3 lines codes mentioned below in the file -
+       @tailwind base;
+       @tailwind components;
+       @tailwind utilities;
+
+6. install extension 'Tailwind CDD IntelliSense' from vscode
+
+7. Modify script section of package.json file as below
+        "scripts": {
+    "start": "vite",
+    "build":"tailwindcss -i input.css -o ./css/output.css --minify",
+    "watch":"tailwindcss -i input.css -o ./css/output.css --watch",
+    "dev":"vite build"
+  },
+
+  8. In terminal run the tailwind with command:
+ * for tailwind to run: npm run start
+ * to build: tailwindcss -i input.css -o ./css/output.css --minify
+ * keep it watch: tailwindcss -i input.css -o ./css/output.css --watch
+      (it should be run in another terminal)
+ * to pakage: vite build;
+
+ <!-- # TOOLS USED -->
+ * svg for hamburger menu
+ <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+  <path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"></path>
+  </svg>
